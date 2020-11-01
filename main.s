@@ -46,21 +46,21 @@ loop:
 	bra	loop		; keep going until finished
 	goto	0
 delay:	
-	movf	PORTD, W, A
+	movf	0x30, W, A
 	movwf	0x05, A
 	decfsz	0x05, A	; decrement until zero
 	bra delay
 	call delay2
 	return
 delay2:
-	movf	PORTD, W, A
+	movf	0x30, W, A
 	movwf	0x06, A
 	decfsz	0x06, A	; decrement until zero
 	bra delay2
 	call delay3
 	return
 delay3:
-	movf	PORTD, W, A
+	movf	0x30, W, A
 	movwf	0x07, A
 	decfsz	0x07, A	; decrement until zero
 	bra delay3
